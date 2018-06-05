@@ -111,7 +111,7 @@ Turning on Text mode runs the normal hook `dict-lookup-mode-hook'."
 (defun dict-lookup--search-word (word)
   "Search for WORD using the WordNet dictionary."
   (shell-command-to-string
-   (format "dict -d wn %s" (shell-quote-argument word))))
+   (format "dict -d %s %s" dict-lookup-dictionary (shell-quote-argument word))))
 
 (defun dict-lookup--view-result (word)
   "Replace dictionary buffer's contents with the search results for WORD."
